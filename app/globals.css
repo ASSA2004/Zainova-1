@@ -1,0 +1,177 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-sans), 'Geist Fallback', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono), 'Geist Mono Fallback', ui-monospace, monospace;
+
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-line: var(--line);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  color-scheme: dark;
+  --background: #0a0a0a;
+  --foreground: #f1f0ec;
+  --surface: #111111;
+  --card: #111111;
+  --card-foreground: #f1f0ec;
+  --popover: #111111;
+  --popover-foreground: #f1f0ec;
+  --primary: #f1f0ec;
+  --primary-foreground: #0a0a0a;
+  --secondary: #161513;
+  --secondary-foreground: #f1f0ec;
+  --muted: #161513;
+  --muted-foreground: #96958f;
+  --accent: #b08b5f;
+  --accent-foreground: #0a0a0a;
+  --line: rgba(241, 240, 236, 0.09);
+  --destructive: #c0604a;
+  --border: rgba(241, 240, 236, 0.08);
+  --input: rgba(241, 240, 236, 0.12);
+  --ring: #b08b5f;
+  --chart-1: #b08b5f;
+  --chart-2: #96958f;
+  --chart-3: #6b6a65;
+  --chart-4: #f1f0ec;
+  --chart-5: #4a4944;
+  --radius: 0.375rem;
+  --sidebar: #111111;
+  --sidebar-foreground: #f1f0ec;
+  --sidebar-primary: #b08b5f;
+  --sidebar-primary-foreground: #0a0a0a;
+  --sidebar-accent: #161513;
+  --sidebar-accent-foreground: #f1f0ec;
+  --sidebar-border: rgba(241, 240, 236, 0.08);
+  --sidebar-ring: #b08b5f;
+}
+
+.theme-light {
+  --background: #f4f3ef;
+  --foreground: #111111;
+  --surface: #eae8e1;
+  --card: #eae8e1;
+  --card-foreground: #111111;
+  --popover: #eae8e1;
+  --popover-foreground: #111111;
+  --primary: #111111;
+  --primary-foreground: #f4f3ef;
+  --secondary: #e6e4dc;
+  --secondary-foreground: #111111;
+  --muted: #e6e4dc;
+  --muted-foreground: #686762;
+  --accent: #9c7a4f;
+  --accent-foreground: #f4f3ef;
+  --line: rgba(17, 17, 17, 0.1);
+  --border: #d8d6cf;
+  --input: rgba(17, 17, 17, 0.14);
+  --ring: #9c7a4f;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    transition: background-color 700ms cubic-bezier(0.4, 0, 0.2, 1), color 700ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+}
+
+@layer utilities {
+  .scroll-cue-tick {
+    animation: scroll-cue 1.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes scroll-cue {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  50% {
+    transform: translateY(0%);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
