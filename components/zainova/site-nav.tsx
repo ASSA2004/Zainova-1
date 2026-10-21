@@ -55,28 +55,28 @@ export function SiteNav() {
               e.preventDefault()
               handleNavigate('#top')
             }}
-            className="font-sans text-[15px] font-semibold tracking-[0.04em] text-foreground"
+            className="font-aboreto text-[16px] tracking-[0.08em] text-foreground transition-opacity hover:opacity-85"
           >
-            ZAINOVA
+            Z A I N O V A
           </a>
 
           <div className="hidden items-center gap-8 md:flex">
             <ul className="flex items-center gap-10">
-            {LINKS.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  onClick={(e) => {
-                    e.preventDefault()
-                    handleNavigate(link.href)
-                  }}
-                  className="group relative font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground transition-colors duration-300 hover:text-foreground"
-                >
-                  {link.label}
-                  <span className="absolute -bottom-1.5 left-0 h-px w-0 bg-accent transition-all duration-300 group-hover:w-full" />
-                </a>
-              </li>
-            ))}
+              {LINKS.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    onClick={(e) => {
+                      e.preventDefault()
+                      handleNavigate(link.href)
+                    }}
+                    className="group relative font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground transition-colors duration-300 hover:text-foreground"
+                  >
+                    {link.label}
+                    <span className="absolute -bottom-1.5 left-0 h-px w-0 bg-accent transition-all duration-300 group-hover:w-full" />
+                  </a>
+                </li>
+              ))}
             </ul>
             <a
               href="https://wa.me/971588311228?text=Hello%20ZAINOVA%2C%20I%27d%20like%20to%20request%20a%20business%20proposal."
