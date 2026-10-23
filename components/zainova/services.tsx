@@ -42,6 +42,13 @@ const SERVICES: Service[] = [
     copy: 'Reliable infrastructure quietly holding up every product your business depends on.',
     diagram: ['APPLICATION', 'API', 'NETWORKING', 'DATABASE', 'CLOUD'],
   },
+  {
+    index: '05',
+    eyebrow: 'EXTENDED SERVICE',
+    title: 'English & Arabic Calligraphy',
+    copy: 'Bespoke hand-crafted calligraphy in English and Arabic for architectural spaces, luxury wedding cards & stationery, brand logos, and custom commissions.',
+    diagram: ['ARCHITECTURE', 'WEDDING CARDS', 'LOGOS', 'COMMISSIONS'],
+  },
 ]
 
 function ServiceRow({ service, index }: { service: Service; index: number }) {
